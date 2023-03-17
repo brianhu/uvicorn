@@ -521,7 +521,7 @@ class RequestResponseCycle:
                 if HEADER_VALUE_RE.search(value):
                     raise RuntimeError("Invalid HTTP header value.")
 
-                name = name.lower()
+                # name = name.lower()
                 if name == b"content-length" and self.chunked_encoding is None:
                     self.expected_content_length = int(value.decode())
                     self.chunked_encoding = False
